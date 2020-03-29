@@ -1,0 +1,70 @@
+@baseUrl=http://localhost:3333
+
+GET {{baseUrl}}/users
+
+###
+
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "name": "Jose",
+  "email": "jose@teste.com"
+}
+
+###
+
+PUT {{baseUrl}}/users/1
+Content-Type: application/json
+
+{
+  "email": "maria@teste.com"
+}
+
+###
+
+POST {{baseUrl}}/users/8/addresses
+Content-Type: application/json
+
+{
+  "zipcode": "5353-532",
+  "street": "rua E",
+  "number": 522
+}
+
+###
+
+GET {{baseUrl}}/users/3/addresses
+Content-Type: application/json
+
+###
+
+DELETE {{baseUrl}}/address/20
+
+###
+
+POST {{baseUrl}}/users/8/techs
+Content-Type: application/json
+
+{
+  "name": "Ruby"
+}
+
+###
+
+GET {{baseUrl}}/users/5/techs
+Content-Type: application/json
+
+###
+
+DELETE {{baseUrl}}/users/1/techs
+Content-Type: application/json
+
+{
+  "name": "node"
+}
+
+###
+
+GET {{baseUrl}}/report
+Content-Type: application/json
