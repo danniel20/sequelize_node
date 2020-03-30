@@ -1,18 +1,18 @@
 const { Model, DataTypes } = require('sequelize')
 
-const connection = require('../database')
+const sequelize = require('../database')
 
 const Address = require('./Address')
 const Tech = require('./Tech')
 
 class User extends Model {
   
-//   static init(connection){
+//   static init(sequelize){
 //     super.init({
     //   name: DataTypes.STRING,
     //   email: DataTypes.STRING
     // }, {
-    //   sequelize: connection
+    //   sequelize: sequelize
     // })
 //   }
 
@@ -26,7 +26,7 @@ User.init({
   name: DataTypes.STRING,
   email: DataTypes.STRING
 }, {
-  sequelize: connection
+  sequelize: sequelize
 })
 
 User.hasMany(Address, {foreignKey: 'user_id', as: 'addresses'})

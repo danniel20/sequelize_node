@@ -1,14 +1,14 @@
 const { Model, DataTypes } = require('sequelize')
 
-const connection = require('../database')
+const sequelize = require('../database')
 
 class Tech extends Model {
   
-  // static init(connection){
+  // static init(sequelize){
   //   super.init({
   //     name: DataTypes.STRING
   //   }, {
-  //     sequelize: connection,
+  //     sequelize: sequelize,
   //     tableName: 'techs'
   //   })
   // }
@@ -21,7 +21,7 @@ class Tech extends Model {
 Tech.init({
   name: DataTypes.STRING
 }, {
-  sequelize: connection,
+  sequelize: sequelize,
   tableName: 'techs'
 })
 

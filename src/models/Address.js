@@ -1,18 +1,18 @@
 const { Model, DataTypes } = require('sequelize')
 
-const connection = require('../database')
+const sequelize = require('../database')
 
 const User = require('./User')
 
 class Address extends Model {
   
-  // static init(connection){
+  // static init(sequelize){
   //   super.init({
   //     zipcode: DataTypes.STRING,
   //     street: DataTypes.STRING,
   //     number: DataTypes.INTEGER
   //   }, {
-  //     sequelize: connection
+  //     sequelize: sequelize
   //   })
   // }
 
@@ -26,7 +26,7 @@ Address.init({
   street: DataTypes.STRING,
   number: DataTypes.INTEGER
 }, {
-  sequelize: connection
+  sequelize: sequelize
 })
 
 module.exports = Address
